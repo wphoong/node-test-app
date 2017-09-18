@@ -28,11 +28,10 @@ app.post('/quotes', (req, res) => {
 //DATABASE
 const MongoClient = require('mongodb').MongoClient;
 
-var db
 
-MongoClient.connect('mongodb://node-test:test@ds117830.mlab.com:17830/node-test-app', (err, database) => {
+MongoClient.connect(db.url, (err, database) => {
   if (err) return console.log(err);
-  db = database;
+ 
 });
 
 //LISTEN
